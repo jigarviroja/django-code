@@ -30,6 +30,7 @@ class SchoolListView(ListView):
 
 
 class SchoolDetailView(DetailView):
+    context_object_name = 'school_detail'
     model = models.School
     # DetailView return model name with lower case  ex.school
     template_name = 'basic_app/school_detail.html'
