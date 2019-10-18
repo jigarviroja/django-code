@@ -1,5 +1,6 @@
 from django.db import models
-
+# from django.core.urlresolvers import reverse
+from django.urls import reverse
 # Create your models here.
 
 
@@ -10,6 +11,12 @@ class School(models.Model):
 
     def __str__(self):
         return self.collage_name
+
+    # def get_absolute_url(self):
+    #     pass
+
+    def get_absolute_url(self):
+        return reverse("basic_app:detail", kwargs={'pk': self.pk})
 
 
 class Student(models.Model):

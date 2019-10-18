@@ -1,6 +1,9 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.views.generic import (View, TemplateView,
+                                  ListView, DetailView,
+                                  CreateView, UpdateView,
+                                  DeleteView)
 from . import models
 
 
@@ -34,3 +37,8 @@ class SchoolDetailView(DetailView):
     model = models.School
     # DetailView return model name with lower case  ex.school
     template_name = 'basic_app/school_detail.html'
+
+
+class SchoolCreateView(CreateView):
+    fields = ('collage_name', 'principal', 'location')
+    model = models.School
