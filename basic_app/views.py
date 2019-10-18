@@ -42,3 +42,8 @@ class SchoolDetailView(DetailView):
 class SchoolCreateView(CreateView):
     fields = ('collage_name', 'principal', 'location')
     model = models.School
+
+
+class SchoolUpdateView(UpdateView):
+    fields = ('collage_name', 'principal')
+    model = models.School
